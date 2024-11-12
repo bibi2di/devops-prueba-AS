@@ -6,13 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Bajar codigo
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: probar codigo
         run: python3 main.py
 
 
   build_push:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Mostrar mensaje
         run: echo "Hola github actions"
