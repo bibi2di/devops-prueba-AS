@@ -1,1 +1,1 @@
-prisdfsdfsdfnt("Hola mundo")
+print("Hola mundo")
