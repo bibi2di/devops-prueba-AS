@@ -6,3 +6,7 @@ jobs:
     steps:
       - name: Mostrar mensaje
         run: echo "Hola github actions"
+      - name: Bajar codigo
+        uses: actions/chekout@v4
+      - name: Probar codigo
+        run: python3 main.py
