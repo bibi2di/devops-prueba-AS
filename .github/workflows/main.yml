@@ -1,28 +1,13 @@
-name: Primer workflow
-on: 
-  push:
-    branches:
-      - nuevafeature
-      
+name: ej1
+
+on: push
 jobs:
-
-  test:
-    runs-on: ubuntu-latest
+  ej1:
+    runs-on: ubuntu_latest
     steps:
       - name: Bajar codigo
         uses: actions/checkout@v4
-      - name: probar codigo
-        run: python3 main.py
-
-
-  build_push:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Mostrar mensaje
-        run: echo "Hola github actions"
-      - name: Bajar codigo
-        uses: actions/checkout@v4
-      - name: Probar codigo
-        run: python3 main.py
-      
+      - name: Instalar pytest
+        run: pip install pytest
+      - name: Test
+        run: pytest test.py
