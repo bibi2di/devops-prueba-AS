@@ -1,0 +1,11 @@
+name: Workflow2
+
+on: pull_request
+jobs:
+  lint:
+    runs-on: ubuntu_latest
+    steps: 
+      - name: linter
+        uses: advanced-security/python-lint-code-scanning-action@v1
+    
+      
